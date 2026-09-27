@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install lint tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck python3 ca-certificates curl
+
+      - name: ShellCheck
+        run: shellcheck -x scripts/*.sh scripts/lib/*.sh
+
+      - name: Python unit tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Validate config template with Yggdrasil
+        run: ./scripts/validate-config.sh
+
+      - name: Secret scan
+        run: ./scripts/check-no-secrets.sh
+
+      - name: PSScriptAnalyzer
+        run: |
+          docker run --rm -v "${GITHUB_WORKSPACE}:/work" -w /work mcr.microsoft.com/powershell:lts \
+            pwsh -NoProfile -NonInteractive -Command 'Set-PSRepository -Name PSGallery -InstallationPolicy Trusted; Install-Module PSScriptAnalyzer -Force -Scope CurrentUser; Invoke-ScriptAnalyzer -Path ./windows -Recurse -EnableExit -Severity Warning; ./tests/Test-WindowsConfig.ps1'

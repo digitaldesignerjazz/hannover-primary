@@ -1,0 +1,21 @@
+# Active peers for hannover-primary.
+# One URI per line. Lines starting with # are comments.
+# Source: https://github.com/yggdrasil-network/public-peers (europe/germany.md)
+# Policy: three TLS peers in Germany, distinct operators, public-key pins where published.
+# Upstream recommends two or three nearby peers, not a long list.
+# Refresh: ./scripts/peers.sh refresh && ./scripts/peers.sh select --write
+# Apply:   sudo ./scripts/configure.sh
+#
+# Nuremberg, Netcup, operated by Marek Kuethe (mk16.de)
+tls://ygg1.mk16.de:1338?key=0000000087ee9949eeab56bd430ee8f324cad55abf3993ed9b9be63ce693e18a
+
+# Nuremberg, Hetzner
+tls://vpn.ltha.de:443?key=0000006149970f245e6cec43664bce203f2514b60a153e194f31e2b229a1339d
+
+# Falkenstein, Hetzner, operated by neilalexander
+tls://yggdrasil.neilalexander.dev:64648?key=ecbbcb3298e7d3b4196103333c3e839cfe47a6ca47602b94a6d596683f6bb358
+
+# Nearby alternates (not active). Remove the leading # to use one, then run configure.sh.
+# Frankfurt: tls://ygg-oracle.axxa.dev:18080
+# Frankfurt: tls://helium.avevad.com:1337
+# Falkenstein, port 443: tls://ygg.mkg20001.io:443
