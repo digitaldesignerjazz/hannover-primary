@@ -1,0 +1,19 @@
+{
+  "Listen": [],
+  "AdminListen": "unix:///var/run/yggdrasil/yggdrasil.sock",
+  "IfName": "ygg0",
+  "IfMTU": 65535,
+  "NodeInfoPrivacy": false,
+  "NodeInfo": {
+    "name": "hannover-primary",
+    "location": "Hannover/DE"
+  },
+  "AllowedPublicKeys": [],
+  "MulticastInterfaces": [
+    {
+      "Regex": ".*",
+      "Beacon": true,
+      "Listen": true
+    }
+  ]
+}

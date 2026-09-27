@@ -1,0 +1,11 @@
+# Node identity. Generated on the machine; contains the private key.
+yggdrasil.conf
+*.pem
+*.key
+id_yggdrasil*
+
+# Local peer refresh snapshot (public data, but regenerated on the node).
+config/peers.candidates.txt
+
+# Accidental local output
+.ygg-local/
