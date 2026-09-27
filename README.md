@@ -6,26 +6,10 @@ Der private Schlüssel entsteht auf der Maschine. Er liegt nicht in Git.
 
 ## Schnellstart auf Onyx (WSL Ubuntu)
 
-Das Repository ist privat. GitHub nimmt dafür kein Account-Passwort an. In der Ubuntu-Distribution einmalig die GitHub-CLI anmelden, danach klonen:
+Das Repository ist öffentlich. `git` fragt nicht nach Benutzername oder Passwort. In der Ubuntu-Distribution:
 
 ```bash
-sudo apt-get update
-sudo apt-get install -y gh
-gh auth login
-gh repo clone digitaldesignerjazz/hannover-primary
-cd hannover-primary
-sudo ./scripts/install.sh
-sudo ./scripts/status.sh
-```
-
-Bei `gh auth login`: GitHub.com, Protokoll HTTPS, im Browser anmelden. Den Einmalcode aus dem Terminal auf [github.com/login/device](https://github.com/login/device) eingeben. Als Passwort für `git` oder `gh` nie das GitHub-Passwort verwenden.
-
-Fehlt das Paket `gh` in den Ubuntu-Quellen, die [Installationsanleitung der GitHub-CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md) nutzen und die Befehle ab `gh auth login` wiederholen.
-
-Alternativ per SSH, nachdem der öffentliche Schlüssel unter [GitHub SSH-Keys](https://github.com/settings/keys) liegt:
-
-```bash
-git clone git@github.com:digitaldesignerjazz/hannover-primary.git
+git clone https://github.com/digitaldesignerjazz/hannover-primary.git
 cd hannover-primary
 sudo ./scripts/install.sh
 sudo ./scripts/status.sh
