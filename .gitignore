@@ -9,3 +9,5 @@ config/peers.candidates.txt
 
 # Accidental local output
 .ygg-local/
+__pycache__/
+*.pyc
