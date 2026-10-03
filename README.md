@@ -126,7 +126,7 @@ Skripte verweigern das Schreiben einer Konfiguration in den Repository-Baum. Ein
 
 Die Voreinstellung sind drei TLS-Peers in Deutschland, mit veröffentlichtem Schlüssel-Pin, von verschiedenen Betreibern. Die Quelle ist [yggdrasil-network/public-peers](https://github.com/yggdrasil-network/public-peers), Datei `europe/germany.md`, Stand 2026-09-27. Yggdrasil empfiehlt zwei oder drei nahe Peers, nicht eine lange Liste.
 
-Seit 2026-10-03 sind zusätzlich drei weitere Peers aktiv, also sechs insgesamt: `reticulum.me` (DE), `bode.theender.net` (DE) und `nl1.route172.de` (NL, Port 443), alle mit Schlüssel-Pin.
+Seit 2026-10-03 sind vier Peers aktiv: `ygg.mkg20001.io`, `yggdrasil.neilalexander.dev`, `bode.theender.net` (DE) und `nl1.route172.de` (NL, Port 443). Der CI-Test erlaubt höchstens vier. Die zwei langsamsten, `ygg1.mk16.de` und `reticulum.me` (je etwa 42 ms), wurden entfernt und stehen auskommentiert unter den Alternativen.
 
 ```bash
 ./scripts/peers.sh list
@@ -152,10 +152,10 @@ Stand 2026-10-03: Der Knoten `hannover-primary` gilt als **Prototyp**, nicht als
 | Host | Onyx (WSL2 Ubuntu) |
 | Yggdrasil | 0.5.14 |
 | Mesh-IPv6 | `202:db7e:ec7b:937e:8e9b:44a:4870:ee29` |
-| Peers | 6 von 6 verbunden (laut Hannover-Box, 03.10.): `ygg1.mk16.de`, `ygg.mkg20001.io`, `yggdrasil.neilalexander.dev`, neu `reticulum.me`, `bode.theender.net`, `nl1.route172.de` |
+| Peers | 4 aktiv (03.10.): `ygg.mkg20001.io`, `yggdrasil.neilalexander.dev`, `bode.theender.net`, `nl1.route172.de` |
 | Config-Backup auf Onyx | `/var/backups/yggdrasil-config-20261003-1224.tar.gz` |
 
-Die Verbindungszahl stammt aus dem Bericht von Hannover-Box vom 03.10. und wurde nicht unabhängig geprüft; aktuell zeigt sie `sudo ./scripts/status.sh`. Private Schlüssel entstehen auf dem Knoten und gehören nicht ins Repository. `./scripts/peers.sh select --write` ersetzt `config/peers.txt` samt der Statuszeile oben; sie muss danach wieder eingetragen werden.
+Die aktuelle Verbindungszahl zeigt `sudo ./scripts/status.sh`. Private Schlüssel entstehen auf dem Knoten und gehören nicht ins Repository. `./scripts/peers.sh select --write` ersetzt `config/peers.txt` samt der Statuszeile oben; sie muss danach wieder eingetragen werden.
 
 ## Status
 

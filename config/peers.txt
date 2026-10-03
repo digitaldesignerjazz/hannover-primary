@@ -3,14 +3,11 @@
 # One URI per line. Lines starting with # are comments.
 # Source: https://github.com/yggdrasil-network/public-peers (europe/germany.md)
 # Policy: TLS peers in Germany and nearby EU, distinct operators, public-key pins where published.
-# Since 2026-10-03: six active peers (three base peers plus three extras).
+# Since 2026-10-03: four active peers (CI allows at most 4). Removed the two slowest, reticulum.me and ygg1.mk16.de (~42 ms each).
 # Upstream recommends two or three nearby peers, not a long list.
 # Refresh: ./scripts/peers.sh refresh && ./scripts/peers.sh select --write
 # Apply:   sudo ./scripts/configure.sh
 #
-# Nuremberg, Netcup, operated by Marek Kuethe (mk16.de)
-tls://ygg1.mk16.de:1338?key=0000000087ee9949eeab56bd430ee8f324cad55abf3993ed9b9be63ce693e18a
-
 # Falkenstein, port 443, operated by mkg20001 (replaces vpn.ltha.de, offline since spring 2026)
 tls://ygg.mkg20001.io:443
 
@@ -18,9 +15,6 @@ tls://ygg.mkg20001.io:443
 tls://yggdrasil.neilalexander.dev:64648?key=ecbbcb3298e7d3b4196103333c3e839cfe47a6ca47602b94a6d596683f6bb358
 
 # Extra peers added 2026-10-03 on Sven's request.
-# Germany, reticulum.me
-tls://reticulum.me:12393?key=a3d411280dfc350a4484aa3da5feb0407518c5820cbb011d5620347769b26665
-
 # Germany, bode.theender.net
 tls://bode.theender.net:42169?key=f91b909f43829f8b20732b3bcf80cbc4bb078dd47b41638379a078e35984c9a4
 
@@ -30,3 +24,5 @@ tls://nl1.route172.de:443?key=000000002643ae27bad63e2a81f1d30554ce9ea634f5990062
 # Nearby alternates (not active). Remove the leading # to use one, then run configure.sh.
 # Frankfurt: tls://ygg-oracle.axxa.dev:18080
 # Frankfurt: tls://helium.avevad.com:1337
+# Nuremberg (removed 2026-10-03, slowest): tls://ygg1.mk16.de:1338?key=0000000087ee9949eeab56bd430ee8f324cad55abf3993ed9b9be63ce693e18a
+# Germany (removed 2026-10-03, slowest): tls://reticulum.me:12393?key=a3d411280dfc350a4484aa3da5feb0407518c5820cbb011d5620347769b26665
