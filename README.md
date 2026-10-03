@@ -126,6 +126,8 @@ Skripte verweigern das Schreiben einer Konfiguration in den Repository-Baum. Ein
 
 Die Voreinstellung sind drei TLS-Peers in Deutschland, mit veröffentlichtem Schlüssel-Pin, von verschiedenen Betreibern. Die Quelle ist [yggdrasil-network/public-peers](https://github.com/yggdrasil-network/public-peers), Datei `europe/germany.md`, Stand 2026-09-27. Yggdrasil empfiehlt zwei oder drei nahe Peers, nicht eine lange Liste.
 
+Seit 2026-10-03 sind zusätzlich drei weitere Peers aktiv, also sechs insgesamt: `reticulum.me` (DE), `bode.theender.net` (DE) und `nl1.route172.de` (NL, Port 443), alle mit Schlüssel-Pin.
+
 ```bash
 ./scripts/peers.sh list
 ./scripts/peers.sh check

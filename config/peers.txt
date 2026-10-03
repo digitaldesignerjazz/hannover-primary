@@ -1,7 +1,8 @@
 # Active peers for hannover-primary.
 # One URI per line. Lines starting with # are comments.
 # Source: https://github.com/yggdrasil-network/public-peers (europe/germany.md)
-# Policy: three TLS peers in Germany, distinct operators, public-key pins where published.
+# Policy: TLS peers in Germany and nearby EU, distinct operators, public-key pins where published.
+# Since 2026-10-03: six active peers (three base peers plus three extras).
 # Upstream recommends two or three nearby peers, not a long list.
 # Refresh: ./scripts/peers.sh refresh && ./scripts/peers.sh select --write
 # Apply:   sudo ./scripts/configure.sh
@@ -14,6 +15,16 @@ tls://ygg.mkg20001.io:443
 
 # Falkenstein, Hetzner, operated by neilalexander
 tls://yggdrasil.neilalexander.dev:64648?key=ecbbcb3298e7d3b4196103333c3e839cfe47a6ca47602b94a6d596683f6bb358
+
+# Extra peers added 2026-10-03 on Sven's request.
+# Germany, reticulum.me
+tls://reticulum.me:12393?key=a3d411280dfc350a4484aa3da5feb0407518c5820cbb011d5620347769b26665
+
+# Germany, bode.theender.net
+tls://bode.theender.net:42169?key=f91b909f43829f8b20732b3bcf80cbc4bb078dd47b41638379a078e35984c9a4
+
+# Netherlands, route172.de, port 443
+tls://nl1.route172.de:443?key=000000002643ae27bad63e2a81f1d30554ce9ea634f5990062a9e079e23593cd
 
 # Nearby alternates (not active). Remove the leading # to use one, then run configure.sh.
 # Frankfurt: tls://ygg-oracle.axxa.dev:18080
