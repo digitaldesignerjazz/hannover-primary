@@ -143,6 +143,20 @@ sudo ./scripts/configure.sh
 
 Nicht jeder Eintrag im Upstream ist online. Die [Public-Peers-Seite](https://publicpeers.neilalexander.dev/) zeigt, was gerade erreichbar ist.
 
+## Prototyp-Status
+
+Stand 2026-10-03: Der Knoten `hannover-primary` gilt als **Prototyp**, nicht als Produktionsknoten.
+
+| | |
+|---|---|
+| Host | Onyx (WSL2 Ubuntu) |
+| Yggdrasil | 0.5.14 |
+| Mesh-IPv6 | `202:db7e:ec7b:937e:8e9b:44a:4870:ee29` |
+| Peers | 6 von 6 verbunden (laut Hannover-Box, 03.10.): `ygg1.mk16.de`, `ygg.mkg20001.io`, `yggdrasil.neilalexander.dev`, neu `reticulum.me`, `bode.theender.net`, `nl1.route172.de` |
+| Config-Backup auf Onyx | `/var/backups/yggdrasil-config-20261003-1224.tar.gz` |
+
+Die Verbindungszahl stammt aus dem Bericht von Hannover-Box vom 03.10. und wurde nicht unabhängig geprüft; aktuell zeigt sie `sudo ./scripts/status.sh`. Private Schlüssel entstehen auf dem Knoten und gehören nicht ins Repository. `./scripts/peers.sh select --write` ersetzt `config/peers.txt` samt der Statuszeile oben; sie muss danach wieder eingetragen werden.
+
 ## Status
 
 ```bash

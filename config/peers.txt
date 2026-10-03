@@ -1,3 +1,4 @@
+# Status: Prototyp (Stand 2026-10-03)
 # Active peers for hannover-primary.
 # One URI per line. Lines starting with # are comments.
 # Source: https://github.com/yggdrasil-network/public-peers (europe/germany.md)
